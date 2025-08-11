@@ -1,8 +1,11 @@
+import os
 from openai import OpenAI
 
-OPENAI_API_KEY = "aa-VIYcdCWFZTHh6GlKSVnyDRmOEjiJWfhDGb6HtCOSTEdQDGVP"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+AVALAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://api.avalai.ir/v1")
 
-AVALAI_BASE_URL = "https://api.avalai.ir/v1"
+if not OPENAI_API_KEY:
+    raise RuntimeError("Environment variable OPENAI_API_KEY is not set")
 
 client = OpenAI(api_key=OPENAI_API_KEY, base_url=AVALAI_BASE_URL)
 
