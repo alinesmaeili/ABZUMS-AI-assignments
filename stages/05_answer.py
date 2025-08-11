@@ -3,7 +3,7 @@ import json
 from typing import List, Dict
 
 from openai import OpenAI
-from .04_retrieve import hybrid_retrieve  # type: ignore
+from src.retrieve import hybrid_retrieve  # fixed import
 
 PROMPT_PATH = os.environ.get("PROMPT_PATH", "/workspace/prompts/psych_guardrail.txt")
 MODEL = os.environ.get("MODEL", "gpt-4o-mini")
