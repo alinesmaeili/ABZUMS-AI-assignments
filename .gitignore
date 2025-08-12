@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+
+# Environment files (keep example only)
+.env
+*.env
+.env.*
+!.env.example
+
+# Data and indexes
+/data/raw/
+/data/chunks/
+/data/chroma/
+/data/google_drive/
+/data/logs/
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
