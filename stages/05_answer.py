@@ -2,6 +2,9 @@ import os
 import json
 from typing import List, Dict
 
+from dotenv import load_dotenv
+load_dotenv()
+
 from openai import OpenAI
 from src.retrieve import hybrid_retrieve  # fixed import
 

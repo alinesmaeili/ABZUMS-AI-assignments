@@ -2,6 +2,9 @@ import os
 import json
 from typing import Dict, Iterable, List
 
+from dotenv import load_dotenv
+load_dotenv()
+
 import chromadb
 from chromadb.config import Settings
 from tqdm import tqdm
@@ -15,7 +18,7 @@ EMBED_MODEL = os.environ.get("EMBED_MODEL", "text-embedding-3-large")
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 if not OPENAI_API_KEY:
-    print("Warning: OPENAI_API_KEY not set. Set it in your environment before running.")
+    print("Warning: OPENAI_API_KEY not set. Set it in your environment or .env before running.")
 
 
 def read_jsonl(path: str) -> Iterable[Dict]:

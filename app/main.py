@@ -5,8 +5,11 @@ from typing import List, Dict, Optional
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from openai import OpenAI
+from dotenv import load_dotenv
 
 from src.retrieve import hybrid_retrieve
+
+load_dotenv()
 
 PROMPT_PATH = os.environ.get("PROMPT_PATH", "/workspace/prompts/psych_guardrail.txt")
 MODEL = os.environ.get("MODEL", "gpt-4o-mini")
